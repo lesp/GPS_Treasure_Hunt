@@ -14,7 +14,7 @@ longitudes = [Tower[1],Zoo[1],Amusement_Park[1]]
 #Set current position
 packet = gpsd.get_current()
 print(packet.position())
-gmap = gmplot.GoogleMapPlotter(packet.position()[0], packet.position()[1], 15)
+gmap = gmplot.GoogleMapPlotter(packet.position()[0], packet.position()[1], 10)
 #gmap.scatter(latitudes, longitudes, color = choice(colours) , marker=True)
 gmap.scatter(latitudes, longitudes, 'r', marker=True)
 gmap.draw("mymap.html")
