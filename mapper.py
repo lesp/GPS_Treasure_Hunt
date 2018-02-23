@@ -1,7 +1,9 @@
 import gmplot, webbrowser, gpsd, time, subprocess
-#Call cgps to ensure that we have a stable GPS signal
+#Setup the port for gpsd and call cgps to ensure that we have a stable GPS signal
+subprocess.call(["sudo"," gpsd"," /dev/ttyS0"," -F"," /var/run/gpsd.sock"])
 subprocess.call(["cgps"," &"])
-time.sleep(3)
+#Wait 10 seconds to get a signal
+time.sleep(20)
 gpsd.connect()
 #Locations to find
 Tower = (53.8159877,-3.0554085)
