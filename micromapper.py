@@ -1,4 +1,5 @@
-import gmplot, webbrowser, time, microstacknode.hardware.gps.l80gps
+#!/usr/bin/env python3
+import gmplot, subprocess, time, microstacknode.hardware.gps.l80gps
 gps = microstacknode.hardware.gps.l80gps.L80GPS()
 #Locations to find
 Tower = (53.8159877,-3.0554085)
@@ -25,7 +26,7 @@ gmap.scatter(latitudes, longitudes, 'r', marker=True)
 #Draw the map
 gmap.draw("mymap.html")
 #Open a web browser
-webbrowser.open("frame.html", new=0)
+subprocess.call(["chromium-browser"," --start-fullscreen"," frame.html"])
 
 while True:
     data = gps.get_gprmc()
