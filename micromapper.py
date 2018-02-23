@@ -26,7 +26,7 @@ gmap.scatter(latitudes, longitudes, 'r', marker=True)
 #Draw the map
 gmap.draw("mymap.html")
 #Open a web browser
-subprocess.call(["chromium-browser"," --start-fullscreen"," frame.html"])
+subprocess.call(["chromium-browser"," --start-fullscreen"," /home/pi/GPS_Treasure_Hunt/frame.html"])
 
 while True:
     data = gps.get_gprmc()

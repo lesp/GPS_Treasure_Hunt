@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Micromapper
+Comment=GPS Tracker and treasure hunter
+Icon=/usr/share/pixmaps/openbox.xpm
+Exec=/home/pi/GPS_Treasure_Hunt/micromapper.py
+Type=Application
+Encoding=UTF-8
+Terminal=false
+Categories=None;
