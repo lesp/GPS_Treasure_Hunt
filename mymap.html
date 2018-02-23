@@ -8,7 +8,7 @@
 	function initialize() {
 		var centerlatlng = new google.maps.LatLng(53.800237, -3.028405);
 		var myOptions = {
-			zoom: 10,
+			zoom: 20,
 			center: centerlatlng,
 			mapTypeId: google.maps.MapTypeId.ROADMAP
 		};
@@ -41,6 +41,21 @@
 		});
 		marker.setMap(map);
 
+var heatmap_points = [
+new google.maps.LatLng(53.800237, -3.028405),
+];
+
+var pointArray = new google.maps.MVCArray(heatmap_points);
+var heatmap;
+heatmap = new google.maps.visualization.HeatmapLayer({
+
+data: pointArray
+});
+heatmap.setMap(map);
+heatmap.set('threshold', 10);
+heatmap.set('radius', 10);
+heatmap.set('opacity', 0.600000);
+heatmap.set('dissipating', true);
 	}
 </script>
 </head>
