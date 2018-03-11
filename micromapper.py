@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-import gmplot, subprocess, time, microstacknode.hardware.gps.l80gps
+import gmplot, subprocess, time
+import microstacknode.hardware.gps.l80gps
 gps = microstacknode.hardware.gps.l80gps.L80GPS()
 #Locations to find
 Tower = (53.8159877,-3.0554085)
