@@ -25,7 +25,7 @@ gmap.heatmap(loc_lat,loc_long)
 #Plot where the treasures
 gmap.scatter(latitudes, longitudes, 'r', marker=True)
 #Draw the map
-gmap.draw("mymap.html")
+gmap.draw("/home/pi/GPS_Treasure_Hunt/mymap.html")
 #Open a web browser
 subprocess.call(["chromium-browser"," --start-fullscreen"," /home/pi/GPS_Treasure_Hunt/frame.html"])
 
@@ -34,10 +34,10 @@ while True:
     lat = data.get("latitude")
     long = data.get("longitude")
     print(lat,long)
-    #gmap = gmplot.GoogleMapPlotter(lat, long, 18)
+    gmap = gmplot.GoogleMapPlotter(lat, long, 18)
     loc_lat = [lat]
     loc_long = [long]
     print(loc_lat, loc_long)
     gmap.heatmap(loc_lat,loc_long)
-    gmap.draw("mymap.html")
+    gmap.draw("/home/pi/GPS_Treasure_Hunt/mymap.html")
     time.sleep(5)
