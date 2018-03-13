@@ -3,9 +3,9 @@ import gmplot, subprocess, time
 import microstacknode.hardware.gps.l80gps
 gps = microstacknode.hardware.gps.l80gps.L80GPS()
 #Locations to find
-Tower = (53.8159877,-3.0554085)
-Zoo = (53.8157874,-3.0107095)
-Amusement_Park = (53.7924182,-3.0556338)
+Tower = (53.7984303,-3.0287179)
+Zoo = (53.797879,-3.0292731)
+Amusement_Park = (53.7988663,-3.0254255)
 #Add them to a list
 latitudes = [Tower[0],Zoo[0],Amusement_Park[0]]
 longitudes = [Tower[1],Zoo[1],Amusement_Park[1]]
@@ -34,6 +34,10 @@ while True:
     lat = data.get("latitude")
     long = data.get("longitude")
     print(lat,long)
-    gmap = gmplot.GoogleMapPlotter(lat, long, 20)
+    #gmap = gmplot.GoogleMapPlotter(lat, long, 18)
+    loc_lat = [lat]
+    loc_long = [long]
+    print(loc_lat, loc_long)
     gmap.heatmap(loc_lat,loc_long)
+    gmap.draw("mymap.html")
     time.sleep(5)
