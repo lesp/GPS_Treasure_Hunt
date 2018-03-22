@@ -34,10 +34,11 @@ while True:
     lat = data.get("latitude")
     long = data.get("longitude")
     print(lat,long)
-    gmap = gmplot.GoogleMapPlotter(lat, long, 18)
     loc_lat = [lat]
     loc_long = [long]
     print(loc_lat, loc_long)
+    gmap = gmplot.GoogleMapPlotter(lat, long, 18)
     gmap.heatmap(loc_lat,loc_long)
+    gmap.scatter(latitudes, longitudes, 'r', marker=True)
     gmap.draw("/home/pi/GPS_Treasure_Hunt/mymap.html")
     time.sleep(5)
